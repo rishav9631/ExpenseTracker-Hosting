@@ -11,6 +11,9 @@ const formatCurrency = (amount) =>
 const BASE_URL = 'https://expensetracker-backend-9cqw.onrender.com';
 
 const App = () => {
+  useEffect(() => {
+    document.title = "ExpenseTracker";
+  }, []);
   const [expenses, setExpenses] = useState([]);
   const [income, setIncome] = useState([]);
   const [budgets, setBudgets] = useState({});
@@ -766,7 +769,9 @@ const App = () => {
 
   // Return main JSX
   return (
+    
     <div className="bg-gray-950 min-h-screen text-gray-200 p-4 sm:p-8">
+      
       <div className="max-w-4xl mx-auto bg-gray-900 rounded-3xl shadow-2xl overflow-hidden">
         <header className="p-6 text-center">
           <h1 className="text-3xl sm:text-4xl font-extrabold text-white">Money Manager</h1>
