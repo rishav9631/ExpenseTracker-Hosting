@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+
 const AiGeneratedSummary = () => {
   const [aiSummaryEnabled, setAiSummaryEnabled] = useState(false);
   const [aiSummaryText, setAiSummaryText] = useState('');
@@ -13,7 +14,7 @@ const AiGeneratedSummary = () => {
     setError('');
     setGeminiSummary('');
     try {
-      const res = await axios.post('http://localhost:5000/run-gemini', {
+      const res = await axios.post('https://expensetracker-backend-9cqw.onrender.com/run-gemini', {
         description: aiSummaryText
       });
       const text = res.data?.candidates?.[0]?.content?.parts?.[0]?.text || 'No summary received.';

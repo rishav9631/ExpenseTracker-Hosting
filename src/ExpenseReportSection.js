@@ -34,7 +34,7 @@ const ExpenseReportSection = () => {
     setReport([]);
     setError('');
     try {
-      const res = await axios.post('http://localhost:5000/api/expenses/report', {
+      const res = await axios.post('https://expensetracker-backend-9cqw.onrender.com/api/expenses/report', {
         startDate,
         endDate,
       });
@@ -49,7 +49,7 @@ const ExpenseReportSection = () => {
   const downloadPdf = async () => {
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/expenses/report/pdf',
+        'https://expensetracker-backend-9cqw.onrender.com/api/expenses/report/pdf',
         { startDate, endDate },
         { responseType: 'blob' }
       );

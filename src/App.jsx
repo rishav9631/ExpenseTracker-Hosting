@@ -8,7 +8,7 @@ import axios from 'axios';
 const formatCurrency = (amount) =>
   new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(amount);
 
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'https://expensetracker-backend-9cqw.onrender.com';
 
 const App = () => {
   const [expenses, setExpenses] = useState([]);
@@ -25,7 +25,7 @@ const App = () => {
     if (!window.confirm("Are you sure you want to delete ALL expenses? This action cannot be undone.")) return;
 
     try {
-      await axios.delete('http://localhost:5000/api/expenses'); // Ensure your backend supports DELETE /api/expenses to delete all
+      await axios.delete('BASE_URL/api/expenses'); // Ensure your backend supports DELETE /api/expenses to delete all
       // Assuming you clear the state accordingly after delete
       setExpenses([]);
       setEditingExpense(null);
