@@ -260,22 +260,22 @@ app.delete('/api/expenses', async (req, res) => {
 
 
 
-app.delete('/api/expenses', async (req, res) => {
-  try {
-    // Fetch all expenses without deleting
-    const expenses = await Expense.find({});
+// app.delete('/api/expenses', async (req, res) => {
+//   try {
+//     // Fetch all expenses without deleting
+//     const expenses = await Expense.find({});
 
-    // Log each expense to console for verification
-    expenses.forEach(expense => {
-      console.log('Dummy delete log - Expense:', expense.description, expense.amount, expense.category);
-    });
+//     // Log each expense to console for verification
+//     expenses.forEach(expense => {
+//       console.log('Dummy delete log - Expense:', expense.description, expense.amount, expense.category);
+//     });
 
-    // Send dummy success response with count of expenses found
-    res.json({ success: true, message: 'Dummy delete: did not delete expenses', totalExpenses: expenses.length });
-  } catch (err) {
-    res.status(500).json({ error: 'Dummy delete failed', details: err.message });
-  }
-});
+//     // Send dummy success response with count of expenses found
+//     res.json({ success: true, message: 'Dummy delete: did not delete expenses', totalExpenses: expenses.length });
+//   } catch (err) {
+//     res.status(500).json({ error: 'Dummy delete failed', details: err.message });
+//   }
+// });
 
 
 
