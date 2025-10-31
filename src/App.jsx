@@ -28,7 +28,7 @@ const App = () => {
     if (!window.confirm("Are you sure you want to delete ALL expenses? This action cannot be undone.")) return;
 
     try {
-      await axios.delete('BASE_URL/api/expenses'); // Ensure your backend supports DELETE /api/expenses to delete all
+      await axios.delete('{BASE_URL}/api/expenses'); // Ensure your backend supports DELETE /api/expenses to delete all
       // Assuming you clear the state accordingly after delete
       setExpenses([]);
       setEditingExpense(null);
