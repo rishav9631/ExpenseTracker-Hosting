@@ -249,14 +249,14 @@ app.post('/api/expenses/report', async (req, res) => {
 });
  {/*expenses: { $push: "$$ROOT" } */}
 
-// app.delete('/api/expenses', async (req, res) => {
-//   try {
-//     const result = await Expense.deleteMany({});
-//     res.json({ success: true, deletedCount: result.deletedCount });
-//   } catch (err) {
-//     res.status(500).json({ error: 'Failed to delete all expenses' });
-//   }
-// });
+app.delete('/api/expenses', async (req, res) => {
+  try {
+    const result = await Expense.deleteMany({});
+    res.json({ success: true, deletedCount: result.deletedCount });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to delete all expenses' });
+  }
+});
 
 
 
