@@ -258,7 +258,15 @@ app.delete('/api/expenses', async (req, res) => {
   }
 });
 
-
+app.get('/api/start', (req, res) => {
+  try {
+    // Send the requested JSON response
+    res.json({ message: 'Turning the Backend on' });
+  } catch (error) {
+    // Add error handling in case
+    res.status(500).json({ error: 'Failed to respond' });
+  }
+});
 
 // app.delete('/api/expenses', async (req, res) => {
 //   try {
